@@ -5,4 +5,14 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  server:{
+    watch:{
+      usePolling:true,
+      interval: 500,
+    },
+  },
+  optimizeDeps:{
+    include:["react-router"],
+    force:true,
+  },
 });
